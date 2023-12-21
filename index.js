@@ -18,8 +18,12 @@ app.get ("/CadEquipamento",(req,res) => {
     res.render("CadEquipamento");
 });
 
-app.get ("/CadSituacao",(req,res) => {
-    res.render("CadSituacao");
+app.get ("/CadPartEmpresa",(req,res) => {
+    res.render("CadPartEmpresa");
+});
+
+app.get ("/CadPartEquipamento",(req,res) => {
+    res.render("CadPartEquipamento");
 });
 
 app.post ("/salvarpergunta",(res,req) => {
