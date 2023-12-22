@@ -17,10 +17,10 @@
 			Nome
 			Particularidade
 			
--Cada cliente tem: Uma Situação
--Um equipamento tem: Uma Situação
+-Cada cliente tem: Uma particularidade
+-Um equipamento tem: Uma particularidade
 -Pesquisa por Razão/fantasia ou CNPJ
--Listar os cliente e quando clicar no cliente listar as situações 
+-Listar os cliente e quando clicar no cliente listar as particularidade
 
 
 
@@ -34,3 +34,7 @@ PARA INICIAR UM PROJETO NODE
 
 PARA A APLICAÇÃO RODAR USAR O NODEMON
 - Cmd >> nodemon index.js
+
+BANCO DE DADOS
+ - Cmd >> npm install --save sequelize
+ -  para usar o sequelize é necessario a instalar a biblioteca mysql2 >> npm install --save mysql2
