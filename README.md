@@ -3,13 +3,20 @@
  OBS:
  Tela inicial 
     Cadastro
-	    Cliente
+	    Empresa
 		    Razão social
 		    Nome fantasia
 		    CNPJ
 	    Equipamento
 		    Descrição
-
+    Cadastro Particularidade
+		Empresa
+			Razão social /Nome fantasia/CNPJ
+			Particularidade
+		Equipamento
+			Nome
+			Particularidade
+			
 -Cada cliente tem: Uma Situação
 -Um equipamento tem: Uma Situação
 -Pesquisa por Razão/fantasia ou CNPJ
