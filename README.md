@@ -35,6 +35,10 @@ PARA INICIAR UM PROJETO NODE
 PARA A APLICAÇÃO RODAR USAR O NODEMON
 - Cmd >> nodemon index.js
 
-BANCO DE DADOS
+BIBLIOTECA DO EXPRESS PARA PEGAR OS DADOS SALVOS 
+Responsavel por traduzir os campos do front para uma estrutura javascript para usar no back
+- Cmd >> npm install body-parser --save
+
+BANCO DE DAD0OS
  - Cmd >> npm install --save sequelize
  -  para usar o sequelize é necessario a instalar a biblioteca mysql2 >> npm install --save mysql2
