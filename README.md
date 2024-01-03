@@ -40,5 +40,6 @@ Responsavel por traduzir os campos do front para uma estrutura javascript para u
 - Cmd >> npm install body-parser --save
 
 BANCO DE DAD0OS
+ - Instalar o MysqlWorkbench 
  - Cmd >> npm install --save sequelize
  -  para usar o sequelize é necessario a instalar a biblioteca mysql2 >> npm install --save mysql2

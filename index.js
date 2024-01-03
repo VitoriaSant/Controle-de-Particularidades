@@ -1,13 +1,24 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
+const connection = require("./database/database");
+
+
+
+connection.authenticate()
+    .then(() => {
+        console.log(" certo");
+    })
+    .catch((msgErro) => {
+        console.log (msgErro)
+    })
+
 
 
 //Definindo que vou utilizar o ejs para fazer o html
 app.set('view engine','ejs');
 //Definindo que minha aplicação vai usar arquivos estaticos (CSS, imagens...)
 app.use(express.static('public'));
-
 //Configuração do bodyParser
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
