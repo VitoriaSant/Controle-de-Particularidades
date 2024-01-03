@@ -7,12 +7,12 @@
                 <h3>Cadastro de particularidade de equipamento</h3>  
             </div>
             <div class="card-body">
-                <form method="POST" action="/salvarpergunta"> 
+                <form method="POST" action="/salvarPartEquipamento"> 
                     <label>Equiapmento</label>
-                    <input type="text" placeholder="Equipamento" class="form-control">
+                    <input type="text" placeholder="Equipamento" class="form-control" name="partEquipamento">
                     <br>
                     <label>Particularidade</label>
-                    <textarea placeholder="Particularidade" class="form-control"></textarea>
+                    <textarea placeholder="Particularidade" class="form-control" name="partEquipamentoDescricao"></textarea>
                     <br>
                     <button class="btn btn-outline-danger" href="/" >Salvar</button>
                 </form>

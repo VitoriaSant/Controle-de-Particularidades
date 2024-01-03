@@ -7,15 +7,15 @@
                 <h3>Cadastro de particularidade de empresa</h3>  
             </div>
             <div class="card-body">
-                <form method="POST" action="/salvarpergunta"> 
+                <form method="POST" action="/salvarPartEmpresa"> 
                     <label>Empresa</label>
-                    <input type="text" placeholder="Empresa" class="form-control">
+                    <input type="text" placeholder="Empresa" class="form-control" name="partEmpresa">
                     <br>
                     <label>Equipamento</label>
-                    <input type="text" placeholder="Equipamento" class="form-control">
+                    <input type="text" placeholder="Equipamento" class="form-control" name="partEmpresaEquipamento">
                     <br>
                     <label>Particularidade</label>
-                    <textarea placeholder="Particularidade" class="form-control"></textarea>
+                    <textarea placeholder="Particularidade" class="form-control" name="partEmpresaDescricao"></textarea>
                     <br>
                     <button class="btn btn-outline-danger">Salvar</button>
                 </form>
