@@ -2,17 +2,12 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const connection = require("./database/database");
+const Swal = require('sweetalert2');
 
-
-
-connection.authenticate()
-    .then(() => {
-        console.log(" certo");
-    })
-    .catch((msgErro) => {
-        console.log (msgErro)
-    })
-
+const Empresa = require("./database/Empresa");
+const Equipamento = require("./database/Equipamento");
+const PartEmpresa = require("./database/PartEmpresa");
+const PartEquipamento = require("./database/PartEquipamento");
 
 
 //Definindo que vou utilizar o ejs para fazer o html
@@ -43,29 +38,76 @@ app.get ("/CadPartEquipamento",(req,res) => {
     res.render("CadPartEquipamento");
 });
 
+app.get ("/ConsultarEmpresa",(req,res) => {
+    var 
+    PartEmpresa.findall({ where:{}}).then(ListaPartEmpresa => {});
+    res.render("ConsultarEmpresa");
+});
+
+app.get ("/ConsultarEquipamento",(req,res) => {
+    res.render("ConsultarEquipamento");
+});
+
 app.post("/salvarEmpresa",(req,res) => {
     var cadRazaoSocial = req.body.cadRazaoSocial;
     var cadNomeFantacia = req.body.cadNomeFantacia;
     var cadcnpj = req.body.cadcnpj;
-    res.send("Pergunta recebida " + cadNomeFantacia  +" "+ cadRazaoSocial);
+    
+    Empresa.create({
+        RazãoSocial: cadRazaoSocial,
+        NomeFantacia: cadNomeFantacia,
+        CNPJ: cadcnpj
+    }). then(() => {
+       res.redirect("/");
+
+    }).catch((msgErro) => {
+        console.log (msgErro)
+    });
 });
 
 app.post("/salvarEquipamento",(req,res) => {
     var CadEquipamento = req.body.CadEquipamento;
-    res.send("salvarEquipamento");
+
+    Equipamento.create({
+        nomeDoEquipamento: CadEquipamento
+    }). then(() => {
+        res.redirect("/");
+ 
+     }).catch((msgErro) => {
+         console.log (msgErro)
+     });
 });
+
 app.post("/salvarPartEmpresa",(req,res) => {
     var partEmpresa = req.body.partEmpresa;
     var partEmpresaEquipamento = req.body.partEmpresaEquipamento;
     var partEmpresaDescricao = req.body.partEmpresaDescricao;
-    res.send("salvarPartEmpresa");
+
+    PartEmpresa.create({
+        empresa: partEmpresa,
+        equipamento: partEmpresaEquipamento,
+        particularidade: partEmpresaDescricao
+    }). then(() => {
+        res.redirect("/");
+ 
+     }).catch((msgErro) => {
+         console.log (msgErro)
+     });
 });
 app.post("/salvarPartEquipamento",(req,res) => {
     var partEquipamento = req.body.partEquipamento;
     var partEquipamentoDescricao = req.body.partEquipamentoDescricao;
-    res.send("salvarPartEquipamento");
-});
 
+    PartEquipamento.create({
+        equipamento: partEquipamento,
+        particularidade: partEquipamentoDescricao
+    }). then(() => {
+        res.redirect("/");
+ 
+     }).catch((msgErro) => {
+         console.log (msgErro)
+     });
+});
 
 
 app.listen(443,()=>{ console.log("Show");}); 
