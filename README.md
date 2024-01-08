@@ -1,5 +1,11 @@
 # Controle-de-Particularidades
  
+1- Arrumar o cadastro de particularidade Empresa e Equipamento tem que ser um select
+2- Arrumar no banco para Empresa e Equipamento serem referenciados 
+3- Consulta Perquisa tem que ser select
+
+
+
  OBS:
  Tela inicial 
     Cadastro

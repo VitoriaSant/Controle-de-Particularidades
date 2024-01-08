@@ -4,12 +4,12 @@ const connection = require("./database");
 const PartEmpresa = connection.define('partempresa', {
 
     empresa:{
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
         allowNull: false
     },
 
     equipamento:{
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
 
     },
 

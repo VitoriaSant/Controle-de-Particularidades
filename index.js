@@ -39,12 +39,22 @@ app.get ("/CadPartEquipamento",(req,res) => {
 });
 
 app.get ("/ConsultarEmpresa",(req,res) => {
-    var 
-    PartEmpresa.findall({ where:{}}).then(ListaPartEmpresa => {});
-    res.render("ConsultarEmpresa");
+    var consulta = req.body.pesquisa;
+    PartEmpresa.findAll({ raw: true }).then(ListaPartEmpresa => {
+        res.render("ConsultarEmpresa", {
+            ListaPartEmpresa: ListaPartEmpresa
+        });
+
+    });   
 });
 
 app.get ("/ConsultarEquipamento",(req,res) => {
+    PartEquipamento.findAll({ raw: true }).then(ListaPartEquipamento => {
+        res.render("ConsultarEquipamento", {
+            ListaPartEquipamento: ListaPartEquipamento
+        });
+
+    }); 
     res.render("ConsultarEquipamento");
 });
 

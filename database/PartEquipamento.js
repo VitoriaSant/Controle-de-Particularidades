@@ -3,7 +3,7 @@ const connection = require("./database");
 
 const PartEquipamento = connection.define('partequipamento', {
     equipamento:{
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
         allowNull: false
     },
 
